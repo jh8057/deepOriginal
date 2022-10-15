@@ -9,7 +9,7 @@
   <br />
   <hr />
   <div class="userInfo">
-    <p>테스트 조건 : deep-color</p>
+    <p>테스트 조건 : deep-original</p>
     <p>
       사용자 정보 : {{ userInfo.nickName }} | {{ userInfo.gender }} |
       {{ userInfo.age }}세 | {{ colorOne }} | {{ colorTwo }}

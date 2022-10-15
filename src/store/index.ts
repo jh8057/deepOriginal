@@ -80,7 +80,6 @@ export const store = createStore({
     popAnswer(state) {
       let random = Math.floor(Math.random() * state.answerList.length);
       state.selectedAnswer = state.answerList[random];
-      console.log("selected", state.answerList[random]);
       //삭제
       state.answerList.splice(random, 1);
     },

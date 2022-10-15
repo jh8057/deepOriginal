@@ -2,26 +2,16 @@
   <div class="testOneComp">
     <main v-show="question" class="Question">
       <div class="Question__center">
-        <h3>아래 자극의 색이 가벼운가요 무거운가요?</h3>
+        <h3>아래 자극이 유쾌한가요 불쾌한가요?</h3>
         <img :src="`/deepOriginal/answer/${num}.png`" class="Question__img" />
         <section class="selectSection">
           <div class="selectSection__item">
-            <label for="select1">가벼움</label>
-            <input
-              type="radio"
-              id="select1"
-              value="가벼움"
-              v-model="selected"
-            />
+            <label for="select1">유쾌</label>
+            <input type="radio" id="select1" value="유쾌" v-model="selected" />
           </div>
           <div class="selectSection__item">
-            <label for="select2">무거움</label>
-            <input
-              type="radio"
-              id="select2"
-              value="무거움"
-              v-model="selected"
-            />
+            <label for="select2">불쾌</label>
+            <input type="radio" id="select2" value="불쾌" v-model="selected" />
           </div>
         </section>
       </div>
