@@ -12,7 +12,7 @@
     <p>테스트 조건 : deep-original</p>
     <p>
       사용자 정보 : {{ userInfo.nickName }} | {{ userInfo.gender }} |
-      {{ userInfo.age }}세 | {{ colorOne }} | {{ colorTwo }}
+      {{ userInfo.age }}세 | {{ colorOne.answer }} : {{colorOne.input}} | {{ colorTwo.answer }} : {{colorTwo.input}}
     </p>
   </div>
   <table-result :result1="result1" :result2="result2" />

@@ -33,7 +33,7 @@
     </main>
     <article v-show="end" class="Question">
       <div class="Question__color">
-        <img src="@/assets/colorTest/3.jpg" class="imgList__item--img" />
+        <img :src="`/deepOriginal/colorTest/${colorNum}.jpg`" class="imgList__item--img" />
         <input v-model="colorInput" />&nbsp;
         <button @click="goNextStep" style="font-size: 15px; padding: 10px">
           다음
@@ -109,9 +109,12 @@ export default defineComponent({
     };
 
     const goNextStep = () => {
-      store.commit("setColorOne", colorInput.value);
+      store.commit("setColorOne", { answer : colorNum,input :colorInput.value});
       store.commit("setStep", 8);
     };
+    const colorArr = [2,3,5,6,7,8,12,16,29,42,45,74,97]
+    const colorNum = computed(()=> colorArr[Math.floor(Math.random()*colorArr.length)])
+
 
     /**
      * Shuffles array in place.
@@ -148,6 +151,7 @@ export default defineComponent({
       finData,
       finalResultTwo,
       colorInput,
+      colorNum
     };
   },
 });
