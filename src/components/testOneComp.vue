@@ -25,7 +25,7 @@
     <article v-show="end" class="QuestionEnd">
       <div>
         창을 종료하지 말고 지시가 있기 전까지<br />
-        대기하여 주시기 바랍니다.<br />
+        <span class="redfont">대기하여 주시기 바랍니다.</span><br />
       </div>
       <div style="margin: 30px">
         <button @click="goTestTwo" style="font-size: 15px; padding: 10px">
@@ -34,10 +34,10 @@
       </div>
     </article>
 
-    <article v-if="showFin" class="result" id="resultElement">
+    <!-- <article v-if="showFin" class="result" id="resultElement">
       <p style="font-weight: bold">전문이 보이도록 세로모드로 캡쳐해주세요.</p>
       <table-result v-model:result="finalResult" :key="finData[0]" />
-    </article>
+    </article> -->
   </div>
 </template>
 
@@ -92,8 +92,9 @@ export default defineComponent({
     };
 
     const goTestTwo = () => {
-      store.commit("setStep", 5);
-    };
+      if(window.confirm('지시에 따라 다음단계로 넘어가주세요.\n 다음 단계로 넘어갈까요?')){
+        store.commit("setStep", 5);
+      }
 
     onMounted(() => {
       // 재시작 방지
@@ -174,8 +175,12 @@ export default defineComponent({
   align-content: center;
 }
 .breakTime,
-.Question,
 .QuestionEnd {
+  width: 100%;
+  height: 100%;
+}
+.Question{
+  margin-top: 20px;
   width: 100%;
   height: 100%;
 }
@@ -190,8 +195,8 @@ export default defineComponent({
 }
 
 .Question__img {
-  width: 40vh;
-  height: 40vh;
+  width: 30vh;
+  height: 30vh;
 }
 .centerPoint {
   width: 100%;
@@ -227,5 +232,8 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.redfont {
+  color : red;
 }
 </style>
