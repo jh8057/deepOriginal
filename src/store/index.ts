@@ -72,7 +72,6 @@ export const store = createStore({
     },
     resetList(state) {
       state.answerList = answerJson.answerList;
-      console.log("a", answerJson.answerList);
       state.selectedAnswer = {};
       state.finalResult = [];
       state.testOneEnd = false;
@@ -103,11 +102,9 @@ export const store = createStore({
       state.testTwoEnd = value;
     },
     setColorOne(state, value) {
-      console.log("corlorOne");
       state.colorOne = value;
     },
     setColorTwo(state, value) {
-      console.log("corlortwo");
       state.colorTwo = value;
     },
   },
